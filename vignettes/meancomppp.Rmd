@@ -1,0 +1,42 @@
+---
+title: "Intoduction to meancomppp"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{meancomppp}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(meancomppp)
+```
+
+## Corrected z-test
+First simulate some data
+```{r sim-data}
+pp_data <- simulate_pp_data(n = 1000, n0 = 500, n1 = 500,
+                                         delta = 0.2, sigma_0 = 1, sigma_1 = 1.5,
+                                         rho = 0.5)
+```
+
+Then run the test
+```{r run-test}
+czt <- corrected_z_test(data = pp_data)
+```
+
+Examine the results
+```{r results}
+czt$z_corr
+czt$pval
+czt$stat_sig
+```
+
+
+
