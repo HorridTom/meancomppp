@@ -13,3 +13,5 @@ LazyData: true
 RoxygenNote: 7.0.0
 Suggests: 
     testthat
+URL: https://github.com/HorridTom/meancomppp
+BugReports: https://github.com/HorridTom/meancomppp/issues
